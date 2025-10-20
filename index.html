@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,12 @@
     <title>Day-1 Pet Owner Sign-Up Form</title>
 </head>
 
-    
+
 <body class="bg-light p-3">
     <div class="container mt-3">
         <h1 class="text-center mb-4">Pet Owner Sign-Up Form</h1>
 
- <form id="petForm" class="p-3 bg-white rounded shadow-sm">
+        <form id="petForm" class="p-3 bg-white rounded shadow-sm">
 
             <!-- Owner Info -->
 
@@ -26,7 +27,7 @@
                 <input type="email" id="email" class="form-control" placeholder="username@email.com">
             </div>
 
-             <div class="mb-2">
+            <div class="mb-2">
                 <label for="phone" class="form-label">Phone:</label>
                 <input type="tel" id="phone" class="form-control" placeholder="000-000-0000">
             </div>
@@ -41,6 +42,21 @@
                 <input type="text" id="zip" class="form-control" placeholder="Enter Your Zip Code">
             </div>
 
-    <script src="script.js"></script>
+            <!-- Pet Info -->
+
+            <div class="mb-3">
+                <label for="petName" class="form-label">Pet's Name:</label>
+                <input type="text" id="petName" class="form-control" placeholder="Enter your pet's name">
+            </div>
+
+            <!-- Button -->
+
+            <button type="button" id="saveButton" class="btn btn-primary w-100">
+                Sign Up
+            </button>
+        </form>
+
+        <script src="script.js"></script>
 </body>
+
 </html>
