@@ -19,3 +19,56 @@ function saveForm() {
     // Proof of life: Button is working right
     console.log("button clicked!");
 }
+
+ // Capture each input
+    const ownerName = document.getElementById("ownerName").value;
+    console.log("Name:", ownerName);
+
+    const email = document.getElementById("email").value;
+    console.log("Email:", email);
+
+    const phone = document.getElementById("phone").value;
+    console.log("Phone:", phone);
+
+    const city = document.getElementById("city").value;
+    console.log("City:", city);
+
+    const zip = document.getElementById("zip").value;
+    console.log("Zip:", zip);
+
+    const petName = document.getElementById("petName").value;
+    console.log("Pet Name:", petName);
+
+    // Save data into global state object
+    state = {
+        name: ownerName,
+        email: email,
+        phone: phone,
+        city: city,
+        zip: zip,
+        petName: petName,
+    };
+
+    // Proof of life: final state to console
+    console.log("Final state object:");
+    console.table(state);
+
+    // Factory function for pet owner
+    const petOwner = createPetOwner(state);
+    petOwner.status();
+
+function createPetOwner({ ownerName, email, phone, city, zip, petName}) {
+    return {
+        name,
+        email,
+        phone,
+        city,
+        zip,
+        petName,
+        status() {
+            console.log(
+                `Owner ${this.ownerName} from ${this.city} has a pet named ${this.petName}.`
+            );
+        },
+    };
+}
