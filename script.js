@@ -20,46 +20,45 @@ function saveForm() {
     console.log("button clicked!");
 }
 
- // Capture each input
-    const ownerName = document.getElementById("ownerName").value;
-    console.log("Name:", ownerName);
+// Capture each input
+const ownerName = document.getElementById("ownerName").value;
+console.log("Name:", ownerName);
 
-    const email = document.getElementById("email").value;
-    console.log("Email:", email);
+const email = document.getElementById("email").value;
+console.log("Email:", email);
 
-    const phone = document.getElementById("phone").value;
-    console.log("Phone:", phone);
+const phone = document.getElementById("phone").value;
+console.log("Phone:", phone);
 
-    const city = document.getElementById("city").value;
-    console.log("City:", city);
+const city = document.getElementById("city").value;
+console.log("City:", city);
 
-    const zip = document.getElementById("zip").value;
-    console.log("Zip:", zip);
+const zip = document.getElementById("zip").value;
+console.log("Zip:", zip);
 
-    const petName = document.getElementById("petName").value;
-    console.log("Pet Name:", petName);
+const petName = document.getElementById("petName").value;
+console.log("Pet Name:", petName);
 
-    // Save data into global state object
-    state = {
-        name: ownerName,
-        email: email,
-        phone: phone,
-        city: city,
-        zip: zip,
-        petName: petName,
-    };
+// Save data into global state object
+state = {
+    ownerName,
+    email,
+    phone,
+    city,
+    zip,
+    petName,
+};
+// Proof of life: final state to console
+console.log("Final state object:");
+console.table(state);
 
-    // Proof of life: final state to console
-    console.log("Final state object:");
-    console.table(state);
+// Factory function for pet owner
+const petOwner = createPetOwner(state);
+petOwner.status();
 
-    // Factory function for pet owner
-    const petOwner = createPetOwner(state);
-    petOwner.status();
-
-function createPetOwner({ ownerName, email, phone, city, zip, petName}) {
+function createPetOwner({ ownerName, email, phone, city, zip, petName }) {
     return {
-        name,
+        ownerName,
         email,
         phone,
         city,
