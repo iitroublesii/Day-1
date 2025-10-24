@@ -6,6 +6,9 @@ const state = {
     pets: [],
 };
 
+const testPet = createPet("Benji", 8, "Cat");
+
+
 testPet.status();
 
 // Button & add event listener
