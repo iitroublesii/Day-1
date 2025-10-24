@@ -18,7 +18,6 @@ saveButton.addEventListener("click", saveForm);
 function saveForm() {
     // Proof of life: Button is working right
     console.log("button clicked!");
-}
 
 // Capture each input
 const ownerName = document.getElementById("ownerName").value;
@@ -48,6 +47,7 @@ state = {
     zip,
     petName,
 };
+
 // Proof of life: final state to console
 console.log("Final state object:");
 console.table(state);
@@ -55,6 +55,7 @@ console.table(state);
 // Factory function for pet owner
 const petOwner = createPetOwner(state);
 petOwner.status();
+}
 
 function createPetOwner({ ownerName, email, phone, city, zip, petName }) {
     return {
