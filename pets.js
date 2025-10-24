@@ -23,11 +23,15 @@ function renderPets() {
         console.log("Individual pet HTML:", petHTML);
         htmlString += petHTML;
     });
-    
-// Proof of life
+
+    document.getElementById("petsContainer").innerHTML = htmlString;
+
+    // Proof of life
     console.log("Aggregated HTML:", htmlString);
     return htmlString;
 }
+
+renderPets();
 
 addPetButton.addEventListener("click", () => {
     console.log("Add Pet button clicked!");
@@ -48,10 +52,11 @@ addPetButton.addEventListener("click", () => {
     newPet.status();
     console.table(state.pets);
 
-    // Render pets to the page
-    const petsHTML = renderPets();
-    document.getElementById("petsContainer").innerHTML = petsHTML;
+ 
+    savePets(); 
+    renderPets();
 
-//  Proof of Life
-    console.log("petsHTML:", petsHTML);
+    // Proof of life
+    console.table(state.pets); 
+
 });
