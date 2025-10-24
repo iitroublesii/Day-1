@@ -35,7 +35,7 @@ console.log("City:", city);
 const zip = document.getElementById("zip").value.trim();
 console.log("Zip:", zip);
 
-const petName = document.getElementById("petName").value.trim;
+const petName = document.getElementById("petName").value.trim();
 console.log("Pet Name:", petName);
 
 // Save data into global state object
