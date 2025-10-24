@@ -20,22 +20,22 @@ function saveForm() {
     console.log("button clicked!");
 
 // Capture each input
-const ownerName = document.getElementById("ownerName").value;
+const ownerName = document.getElementById("ownerName").value.trim();
 console.log("Name:", ownerName);
 
-const email = document.getElementById("email").value;
+const email = document.getElementById("email").value.trim();
 console.log("Email:", email);
 
-const phone = document.getElementById("phone").value;
+const phone = document.getElementById("phone").value.trim();
 console.log("Phone:", phone);
 
-const city = document.getElementById("city").value;
+const city = document.getElementById("city").value.trim();
 console.log("City:", city);
 
-const zip = document.getElementById("zip").value;
+const zip = document.getElementById("zip").value.trim();
 console.log("Zip:", zip);
 
-const petName = document.getElementById("petName").value;
+const petName = document.getElementById("petName").value.trim;
 console.log("Pet Name:", petName);
 
 // Save data into global state object
@@ -54,7 +54,9 @@ console.table(state);
 
 // Factory function for pet owner
 const petOwner = createPetOwner(state);
+
 petOwner.status();
+petOwner.render();
 }
 
 function createPetOwner({ ownerName, email, phone, city, zip, petName }) {
@@ -70,5 +72,22 @@ function createPetOwner({ ownerName, email, phone, city, zip, petName }) {
                 `Owner ${this.ownerName} from ${this.city} has a pet named ${this.petName}.`
             );
         },
+
+        render() {
+            document.getElementById("displayOwnerName").textContent = this.ownerName;
+
+            document.getElementById("displayEmail").textContent = this.email;
+
+            document.getElementById("displayPhone").textContent = this.phone;
+
+            document.getElementById("displayCity").textContent = this.city;
+
+            document.getElementById("displayZip").textContent = this.zip;
+            
+            document.getElementById("displayPetName").textContent = this.petName;
+
+            // Show The Display Card
+            document.getElementById("displayCard").classList.remove("d-none");
+        }
     };
 }

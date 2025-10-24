@@ -44,7 +44,7 @@
 
             <!-- Pet Info -->
 
-            <div class="mb-3">
+            <div class="mb-2">
                 <label for="petName" class="form-label">Pet's Name:</label>
                 <input type="text" id="petName" class="form-control" placeholder="Enter your pet's name">
             </div>
@@ -56,6 +56,27 @@
             </button>
         </form>
 
+        <!-- Pet Owner Info -->
+        <div id="displayCard" class="card p-3 mt-4 d-none">
+
+            <h2 class="text-center">Pet Owner Details</h2>
+
+            <p><strong>Owner Name:</strong> <span id="displayOwnerName"></span></p>
+
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+
+            <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+
+            <p><strong>City:</strong> <span id="displayCity"></span></p>
+
+            <p><strong>Zip:</strong> <span id="displayZip"></span></p>
+
+            <p><strong>Pet Name:</strong> <span id="displayPetName"></span></p>
+
+        </div>
+    </div>
+
+        <script src="petOwnerFactory.js"></script>
         <script src="script.js"></script>
 </body>
 
