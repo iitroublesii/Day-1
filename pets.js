@@ -14,6 +14,21 @@ testPet.status();
 // Button & add event listener
 const addPetButton = document.getElementById("addPet");
 
+// Function to render pets
+function renderPets() {
+    let htmlString = "";
+
+    state.pets.forEach(pet => {
+        const petHTML = pet.html();
+        console.log("Individual pet HTML:", petHTML);
+        htmlString += petHTML;
+    });
+    
+// Proof of life
+    console.log("Aggregated HTML:", htmlString);
+    return htmlString;
+}
+
 addPetButton.addEventListener("click", () => {
     console.log("Add Pet button clicked!");
 
@@ -32,4 +47,11 @@ addPetButton.addEventListener("click", () => {
     // Proof of life:
     newPet.status();
     console.table(state.pets);
+
+    // Render pets to the page
+    const petsHTML = renderPets();
+    document.getElementById("petsContainer").innerHTML = petsHTML;
+
+//  Proof of Life
+    console.log("petsHTML:", petsHTML);
 });

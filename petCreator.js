@@ -36,5 +36,16 @@ function createPet(name, age, species) {
                 console.log(`${this.name} is too sleepy to play.`);
             }
         },
+         html() {
+            return `
+            <div class="card mb-3 p-3">
+                <h3>${this.name}</h3>
+                <p><strong>Species:</strong> ${this.species}</p>
+                <p><strong>Age:</strong> ${this.age}</p>
+                <p><strong>Energy:</strong> ${this.energy}</p>
+                <p><strong>Happiness:</strong> ${this.happiness}</p>
+            </div>
+            `;
+         }
     };
 }
